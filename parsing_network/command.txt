@@ -1,0 +1,6 @@
+python inference.py /Users/luke/Documents/ml_datasets/new/tracking/38654/img/ /Users/luke/Documents/ml_models/WSHP/final_model/model.ckpt-19315 --data_list /Users/luke/Documents/ml_datasets/WSHP/list.txt
+python inference.py misc/ /Users/luke/Documents/ml_models/WSHP/model.ckpt-50000 --data_list /Users/luke/Documents/ml_datasets/WSHP/list.txt
+
+
+
+python train.py --data-dir /Users/luke/Documents/ml_datasets/detection/WSHP/ --data-list /Users/luke/Documents/ml_datasets/detection/WSHP/train_all.txt --num-epochs 1 --restore-from /Users/luke/Documents/ml_models/WSHP/train/model.ckpt-50000 --not-restore-last --snapshot-dir snapshots-new-fromcoco --random-scale --random-mirror --save-pred-every 1

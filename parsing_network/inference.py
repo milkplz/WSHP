@@ -118,9 +118,11 @@ def main():
     # Perform inference.
     for step in range(num_steps):
         preds, jpg_path = sess.run([pred, title])
+        print("preds", preds.shape)
         msk = decode_labels(preds, num_classes=args.num_classes)
         im = Image.fromarray(msk[0])
         img_o = Image.open(jpg_path)
+        jpg_path = jpg_path.decode()
         jpg_path = jpg_path.split('/')[-1].split('.')[0]
         img = np.array(im)*0.9 + np.array(img_o)*0.7
         img[img>255] = 255

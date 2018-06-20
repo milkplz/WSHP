@@ -118,7 +118,6 @@ def main():
     # Perform inference.
     for step in range(num_steps):
         preds, jpg_path = sess.run([pred, title])
-        print("preds", preds.shape)
         msk = decode_labels(preds, num_classes=args.num_classes)
         im = Image.fromarray(msk[0])
         img_o = Image.open(jpg_path)

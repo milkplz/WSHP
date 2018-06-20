@@ -1,1 +1,5 @@
 *.pyc
+parsing_network/deeplab_resnet/*.pyc
+parsing_network/kaffe/*.pyc
+/parsing_network/output
+/parsing_network/snapshots-new-fromcoco
